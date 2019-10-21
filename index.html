@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+	New Service Request
+</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		//jquery to put the name of the file they choose in the box
+		$(document).ready(function(){
+			$('input[type="file"]').change(function(e){
+				var fileName = e.target.files[0].name;
+				document.getElementById("fileName").innerHTML = fileName;
+			});
+		});
+	</script>
+	
+	
+
+    <style type="text/css">
+		body
+		{
+			font-family: "Roboto";
+			font-size: 11px;
+		}
+		
+        .backact
+        {
+            background-image: url("https://i.ibb.co/NNKM94W/top-Blue-Bg.png");
+            background-repeat: repeat-x;
+        }
+		
+		.aBtn
+		{
+			background-color: #5166b4;
+			border: none;
+			color: white;
+			font-size: 12px;
+			padding: 2px;
+			text-align: center;
+			width: 100px;
+		}
+		
+		.aBtn:hover
+		{
+			background-color: #ffae00;
+			color: black;
+			cursor: pointer;
+		}
+		
+		.content-body-wrapper
+		{
+			background-image:url("https://i.ibb.co/HgwWhwn/blueBg.png");
+			background-repeat: repeat-x;
+			margin-top: -4px;
+			padding-top: 5px;
+		}
+		
+		.content-header-tab-span
+		{
+			background-image:url("https://i.ibb.co/4tDNFbR/tabBg.png");
+			background-repeat: repeat-x;
+			padding: 2px 10px 0px 10px;
+			margin: 2px 0px 0px 2px;
+			box-shadow: 1px 0px 3px .5px rgba(0, 0, 0, .5);
+			border-radius: 4px 4px 0px 0px;
+			font-size: 11px;
+		}
+		
+		label
+		{
+			padding: 2px 10px 0px 10px;
+		}
+		
+		.bold
+		{
+			font-weight: bold;
+			font-size: 12px;
+		}
+		
+		.required
+		{
+			color: #c72602;
+			font-size: 14px;
+			vertical-align: sub;
+		}
+		
+		.priority
+		{
+			padding: 20px 0px 20px 150px;
+		}
+			
+		#fileName
+		{
+			background-color: #e6e6e6;
+			border-color: #cccccc;
+			border-style: solid;
+			border-width: 1px;
+			margin-left: 10px;
+			width: 650px;
+			height: 17px;
+			display: inline-block;
+			position: absolute;
+			display: inline;
+			font-size: 12px;
+			padding: 0px;
+		}
+		
+		#browse
+		{
+			margin-left: 661px;
+			padding: 0px 15px 1px 15px;
+			background-color: #e6e6e6;
+			border-color: #adadad;
+			border-style: solid;
+			border-width: 1px;
+			font-size: 12px;
+			position: absolute;
+			display: inline;
+		}
+		
+		
+		#didTheyGetIt {
+			background-color: green;
+			font-size: 200px;
+			font-family: impact;
+			text-align: center;
+		}
+		
+    </style>
+	
+	<script>
+		//javascript to check if the file they upload is the right file
+		function checkFile() {
+			var n = 2;
+			if (n == 2) {
+				window.alert("1");
+				document.getElementByID('didTheyGetIt').innerHTML='Congrats!!';
+				window.alert("loaded");
+			} /*else {
+				document.getElementByID("didTheyGetIt").style.display='inline';
+/*				document.getElementByID("didTheyGetIt").style.background-color='red';
+				document.getElementByID("yesOrNo").innerHTML = "Wrong File"; 
+				document.getElementByID("browse").style.display='none';
+				document.getElementByID("fileName").style.display='none'; 
+			}; */
+		}
+			
+			
+			
+			/*
+			window.alert(uploadedDoc);
+			if (uploadedDoc = "ImportantMergerDoc.docx") {
+				document.getElementByID("didTheyGetIt").style.display='inline';
+			} else {
+				document.getElementByID("didTheyGetIt").style.display='inline';
+				document.getElementByID("didTheyGetIt").style.background-color='red';
+				document.getElementByID("yesOrNo").innerHTML = "Wrong File"; 
+				document.getElementByID("browse").style.display='none';
+				document.getElementByID("fileName").style.display='none';
+		}  */
+	</script>
+
+</head>
+<body>
+    <form>
+		<p id = "didTheyGetIt">test</p> <!--displays whether they got it or not; turns on and off based on submit-->
+        <table style="border-style: none; width: 100%;">
+            <tr>
+                <td class="backact">
+                    <table>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                    <button class="aBtn" onClick="checkFile()" id="save">Save</button>
+                            </td>
+                            <td>
+
+                                    <button class="aBtn" onclick="document.getElementById('didTheyGetIt').innerHTML='not 2'">Save &amp; Open</button>
+                            </td>
+                            <td>
+                                    <button class="aBtn" onclick="checkFile()">Save &amp; New</button>
+                            </td>
+                            <td>
+                                    <button class="aBtn" onclick="checkFile()">Save &amp; Exit</button>
+                            </td>
+                            <td>
+                                    <input class="aBtn" type="submit" name="btnExit" value="Exit" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+			<table>
+				<tr>
+					<td class="moveDown">
+						<div class="content-header-tab-span">
+							SR Information
+						</div>
+					</td>
+				</tr>
+			</table>
+    <div class="content-body-wrapper">
+        <table>
+			<tr>
+				<td>
+                    <label>
+                        Received Date &amp; Time</label>
+                </td>
+				<td>
+                    <label>
+                        PO Number</label>
+                </td>
+		</tr>
+		<tr>
+			<td>
+                <label class="bold">Tuesday, October 29, 2019 17:30</label>
+            </td>
+			<td>
+                <input style="margin-left: 10px; padding-left: 1px; width:157px;" type="text" value="An Interesting Opportunity"/>
+            </td>
+		</tr>
+	</table>
+	
+<div style="width:100%;">
+    <table class="content-body" width="800px">
+        <tr>
+            <td>
+                <label style="margin-left: 20px;">
+                    Trans Code</label>
+            </td>
+            <td>
+                <label>
+                    Document Class <span class="required">*</span></label>
+            </td>
+            <td>
+                <label>
+                    Document Type <span class="required">*</span></label>
+            </td>
+            <td>
+                <label>
+                    Transaction Type</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="margin-left: 20px;">
+                    <input type="text" maxlength="5" style="width:60px;" value="0250S" /></label>
+            </td>
+            <td>
+                <label>
+                    <select style="width:140px;">
+						<option selected="selected" value="0">Business Entity</option>
+					</select>
+                </label>
+            </td>
+            <td>            
+                <label>
+                    <select style="width:240px;">
+						<option selected="selected" value="0">Merger</option>
+					</select>
+                </label>
+            </td>
+            <td>
+                <label>
+                    <select style="width:200px;">
+						<option value="0">Merger</option>
+					</select>
+                </label>
+            </td>
+        </tr>
+    </table>
+    <table width="100%">
+        <tr>
+            <td class="priority">
+                <table>
+                    <tr>
+                        <td>
+                            <label>
+                                Priority <span class="required">*</span></label>
+                        </td>
+                        <td>
+                            <label>
+                                <select>
+									<option selected="selected" title="Two Hour Service">Two Hour Service</option>
+								</select>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <table>
+        <tr>
+            <td>
+                <div class="content-header-tab-span">
+                    File Upload
+				</div>
+            </td>
+        </tr>
+    </table>
+	
+    <div class="content-body-wrapper">
+        <table>
+            <tr>
+                <td>
+                    <label>
+                        PDF of Submission <span class="required">*</span></label>
+                </td>
+            </tr>
+            <tr>
+                <td>  <!--here is where I need to make it validate-->
+                    <label id="fileName"></label>
+					<label id="browse">Browse...<input type="file" id="fileUpload" style="position: fixed; top: -100em" /></label>
+					
+
+                </td>
+            </tr>
+        </table>
+	</div>
+</div>
+</table>
+</form>
+</body>
+</html>
